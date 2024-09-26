@@ -8,7 +8,7 @@ sudo apt-get install -y mysql-server
 
 sudo apt-get install -y apache2
 
-sudo apt-get install -y php libapache-mod-php php-mysql
+sudo apt-get install -y php libapache2-mod-php php-mysql
 
 sudo systemctl restart apache2
 
@@ -57,7 +57,7 @@ sudo mysql -uroot -p"$root_password" -e "GRANT ALL PRIVILEGES ON $database_name.
 sudo mysql -uroot -p"$root_password" -e "FLUSH PRIVILEGES;"
 
 # Restart the MySQL service
-sudo service mysql restart
+sudo systemctl restart mysql
 
 # Secure the MySQL installation
 sudo mysql_secure_installation
